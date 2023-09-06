@@ -1,0 +1,80 @@
+@use '../abstractions' as *;
+
+.container-fluid{
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+    
+
+    @include media(small, false){
+        padding: 0 1rem;
+    }
+    @include media(light, false){
+        padding: 0 2rem;
+    }
+    @include media(regular, false){
+        padding: 0 2.5rem;
+    }
+    @include media(medium, false){
+        padding: 0 3rem;
+    }
+    @include media(bold, false){
+        max-width: 1472px;
+        padding: 0 3rem;
+    }
+}
+.container{
+    max-width: 1820px;
+    margin: 0 auto;
+}
+.gazy-container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.primary-container{
+    min-height: 1px;
+    padding: 0 1rem;
+
+    @include media(medium){
+        padding: 0 0 5.3rem 0;
+    }
+}
+.secondary-container{
+    margin: 0 auto;
+    max-width: 1670px;
+    padding: 4.5rem 8.4rem 4rem;
+
+    @include media(medium){
+        padding: 4.5rem 2.4rem 3rem;
+    }
+    @include media(regular){
+        padding: 1.5rem 2.4rem 3rem;
+    }
+}
+
+.tertiary-container{
+    max-width: 1580px;
+    padding: 5rem 0 3rem;
+    margin: 0 auto;
+
+    @include media(medium){
+        padding: 0 0 10.6rem 0;
+    }
+}
+
+.legacy-container{
+    margin: 0 auto 1rem;
+    max-width: 1370px;
+
+    @include media(bold){
+        margin: 0 3rem 1rem;
+    }
+    @include media(middleBold){
+        margin: 0 0.5rem 1rem;
+    }
+}
+
+.easy-container{
+    padding: 0 1rem;
+}

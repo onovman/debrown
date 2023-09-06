@@ -1,0 +1,223 @@
+@use '../abstractions' as *;
+
+.widget{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    pointer-events: none;
+
+    &.active{
+        pointer-events: all;
+        
+        .widget__bg{
+            opacity: 1;
+            visibility: visible;
+        }
+        .widget__item{
+            &:nth-child(2), &:nth-child(3){
+                animation: none;
+                opacity: 0;
+            }
+            &:nth-child(4){
+                opacity: 1;
+            }
+        }
+        .widget__icons{
+            opacity: 1;
+            visibility: visible;
+            bottom: 110px;
+        }
+        .widget-btn{
+            background-color: #d6d6d6;
+            transform: scale(.7) rotate(90deg);
+            box-shadow: 0 0 0 8px rgba(214, 214, 214, 0.2);
+            cursor: pointer;
+        }
+        .widget__pulse{
+            animation: none;
+            opacity: 0;
+        }
+    }
+    &__bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        background: rgba(33,33,33,.3);
+
+        @include easyTransition;
+    }
+    &-btn{
+        pointer-events: all;
+        background-color: var(--tertiary-clr);
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        position: absolute;
+        transform: scale(.85);
+        box-shadow: 0 0 0 8px var(--tetriary-accent-clr);
+        right: 50px;
+        bottom: 50px;
+        cursor: pointer;
+        animation-name: introduceWidget;
+        animation-duration: 15s;
+        opacity: 1;
+
+        @keyframes introduceWidget{
+            0%{
+                opacity: 0;
+                transform: scale(0);
+            }
+            94%{
+                opacity: 0;
+            }
+            95%{
+                opacity: 0.5;
+                transform: scale(0.4);
+            }
+            100%{
+                transform: scale(0.85);
+                opacity: 1;
+            }
+        }
+
+        @include easyTransition;
+    }
+    &__pulse{
+        border: 1px solid 
+        var(--tertiary-clr);
+        animation: widgetPulsing 1.5s infinite;
+        border-radius: 50%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+
+        @keyframes widgetPulsing{
+            0%{
+                opacity: 1;
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(1);
+            }
+            70%{
+                opacity: 0.4;
+            }
+            100%{
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    }
+    &__item{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:nth-child(2){
+            animation: widgetItem1 3s infinite;
+            @keyframes widgetItem1{
+                0%{
+                    opacity: 1;
+                }
+                50%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+        }
+        &:nth-child(3){
+            animation: widgetItem2 3s infinite;
+            @keyframes widgetItem2{
+                0%{
+                    opacity: 0;
+                }
+                50%{
+                    opacity: 1;
+                }
+                100%{
+                    opacity: 0;
+                }
+            }
+        }
+        &:nth-child(4){
+            opacity: 0;
+        }
+
+
+    }
+    &__icons{
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        height: calc(100vh - 110px);
+        position: absolute;
+        bottom: 80px;
+        right: 50px;
+        opacity: 0;
+        visibility: hidden;
+
+        @include easyTransition;
+    }
+    &__icon{
+        background-color: var(--tertiary-clr);
+        margin: 0 10px 10px 0;
+        width: 45px;
+        height: 44px;
+        position: relative;
+        display: block;
+        border-radius: 50%;
+        box-shadow: 0 8px 6px -6px rgba(33,33,33,.2);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: 43%;
+        background-position: center;
+        
+        transition: box-shadow .17s cubic-bezier(0,0,.2,1);
+
+        &:hover{
+            box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+
+            .widget__icon-alt{
+                opacity: 1;
+            }
+        }
+        
+        &-alt{
+            left: -5px;
+            transform: translate(-100%,-50%);
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            padding: 5px 10px;
+            max-width: 360px;
+            border-radius: 1rem;
+            color: var(--sable-clr);
+            background: var(--main-clr);
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 13px;
+            opacity: 0;
+            overflow: hidden;
+
+            @include easyTransition;
+        }
+    }
+}

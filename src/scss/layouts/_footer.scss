@@ -1,0 +1,122 @@
+@use '../abstractions' as *;
+
+.footer{
+    background: #e1e1e1;
+    color: #706a7b;
+    padding: 3rem 0;
+    position: relative;
+    font-size: 0.9rem;
+    z-index: 2;
+
+    &__main{
+        padding: 0;
+        padding-left: 4rem !important;
+
+        @include media(extraMedium){
+            padding-left: 3rem !important;
+        }
+        @include media(medium){
+            padding-left: 1rem !important;
+        }
+    }
+    &__head{
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        letter-spacing: 3px;
+
+        @include getFontWeight(bold);
+    }
+    &__menu{
+        flex-grow: 1;
+
+        @include media(medium){
+            margin-bottom: 3rem;
+        }
+    }
+    &__link{
+        color: var(--sable-clr);
+        padding: 3px 0;
+        letter-spacing: 0;
+        font-size: 1rem;
+
+        &:hover, &:focus{
+            color: var(--primary-accent-clr);
+        }
+    }
+    &__phone{
+        @include getFontWeight(bold);
+    }
+    &__callback{
+        border-bottom: 1px dashed;
+        margin: 3px 0 1rem;
+        display: inline-block;
+
+        @include easyTransition;
+
+        &:hover{
+            color: var(--primary-accent-clr);
+            border-bottom: none;
+        }
+    }
+    &__mail{
+        color: var(--primary-accent-clr);
+        border-bottom: 1px dashed var(--primary-accent-clr);
+        display: inline-block;
+
+        @include easyTransition;
+
+        &:hover{
+            border-bottom: none;
+        }
+    }
+    &__social{
+        margin-top: 1rem;
+    }
+    &__arrows{
+        right: 0;
+        top: 0;
+        z-index: -11;
+    }
+    &__star{
+        @include media(medium){
+            display: none;
+        }
+    }
+    &__bg{
+        bottom: -5rem;
+        z-index: -1;
+        right: -2rem;
+        color: #ebebeb;
+    }
+
+    .col:nth-child(1){
+
+        @include media(medium){
+            order: 3;
+        }
+    }
+    .col:nth-child(2){
+
+        @include media(medium){
+            order: -1;
+        }
+    }
+    .col:nth-child(3){
+        @include media(medium){
+            padding-left: 3rem;
+        }
+        @include media(light){
+            padding-left: 1rem;
+        }
+    }
+    .col:nth-child(4){
+
+        @include media(medium){
+            order: 4;
+            padding-left: 3rem;
+        }
+        @include media(light){
+            padding-left: 1rem;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@use '../abstractions' as *;
+
+.input{
+    --input-border-clr: #aeaeae;
+    display: inline-block;
+    padding: 30px 1rem 10px;
+    height: auto;
+    color: #1d1a24;
+    font-size: 1rem;
+    border: 1px solid var(--input-border-clr, unset);
+    font-family: inherit;
+
+    &::placeholder{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    @include easyTransition(.1s);
+
+    &:focus{
+        --input-border-clr: var(--primary-clr);
+    }
+
+    &__wrap{
+        position: relative;
+    }
+
+    &-holder{
+        position: absolute;
+        color: #3e4757;
+        top: 7px;
+        left: 1rem;
+        font-size: 13px;
+        pointer-events: none;
+
+        @include easyTransition;
+    }
+    &:placeholder-shown + &-holder{
+        top: 18px;
+        font-size: 1rem;
+    }
+    &:focus + &-holder,
+    &:active + &-holder{
+        font-size: 13px;
+        top: 7px;
+        left: 1rem;
+    }
+
+}
+
+textarea.input{
+    height: auto; 
+    overflow: auto;
+    resize: vertical;
+    padding-bottom: 2rem;
+}

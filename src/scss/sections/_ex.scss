@@ -1,0 +1,77 @@
+@use '../abstractions' as *;
+ 
+.ex{
+    line-height: 1.2;
+    margin-top: 6.6rem;
+
+    @include media(bold){
+        margin-top: 4.5rem;
+    }
+    
+    &__item{
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+    }
+    &__text{
+        padding-left: 5.3rem;
+        position: relative;
+
+        @include media(regular){
+            padding-left: 0;
+        }
+        @include media(light){
+            height: auto !important;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 2.3rem;
+            top: 1rem;
+            width: 2.5rem;
+            height: 3px;
+            background: var(--primary-gradient);
+
+            @include media(regular){
+                display: none;
+            }
+        }
+    }
+    &__des{
+        margin: 1rem 0;
+    }
+    &__img{
+        margin-top: 1.8rem;
+
+        &-block{
+            text-align: center;
+        }
+
+        @include media(light){
+            margin-top: 0;
+        }
+    }
+    &__btn{
+        &-wrap{
+            margin: 0;
+            text-align: center;
+            margin-top: 2.7rem;
+
+            @include media(light){
+                margin: 1.5rem auto 2rem;
+            }
+        }
+    }
+    &__title{
+        font-size: 1.9rem;
+
+        @include media(bold){
+            font-size: 1.5rem;
+        }
+        @include media(regular){
+            font-size: 1.125rem;
+            line-height: 1.2;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.bluvet{
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        display: block;
+        z-index: -1;
+    }
+    &::after{
+        background-color: #f3f3f3;
+        width: 30vw;
+        height: 30vw;
+        left: 28%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &{
+        color: red;
+        background-color: white;
+    }
+}

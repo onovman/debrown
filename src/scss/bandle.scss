@@ -1,0 +1,36 @@
+@use 'utilites';
+@use 'abstractions';
+@use 'base';
+@use 'components';
+@use 'layouts/header';
+@use 'layouts/menu';
+@use 'layouts/mobile-menu';
+@use 'layouts/modal';
+@use 'layouts/footer';
+@use 'layouts/main-slider';
+@use 'layouts/gallery';
+@use 'sections/achives';
+@use 'sections/description';
+@use 'sections/ezkiz';
+@use 'sections/about-block';
+@use 'sections/blog-block';
+@use 'sections/bloglist-block';
+@use 'sections/catalog-block';
+@use 'sections/contacts-block';
+@use 'sections/decoration-block';
+@use 'sections/works';
+@use 'sections/decitem';
+@use 'sections/ex';
+@use 'sections/steps';
+@use 'sections/prod';
+@use 'sections/calc';
+@use 'sections/feed-slider';
+@use 'sections/footer-form';
+@use 'sections/e404';
+@use 'sections/brif';
+@use 'sections/types';
+@use 'sections/dev';
+@use 'sections/seo';
+@use 'sections/cases';
+
+

@@ -1,0 +1,182 @@
+@use '../abstractions' as *;
+
+.cases{
+    &__tabs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include media(light){
+            flex-direction: column;
+        }
+    }
+    &__tab{
+        margin-right: 7px;
+        margin-bottom: 7px;
+        padding: 23px 49px;
+        color: var(--sub-clr);
+        border: 1px solid #b6b7b9;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &.active{
+            color: var(--main-clr);
+            background: var(--primary-gradient);
+        }
+
+        @include getFontWeight(medium);
+        @include easyTransition;
+
+        @include media(light){
+            padding: 20px 0;
+        }
+    }
+    &__container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__column{
+        display: block;
+        box-shadow: -0.9rem 0.6rem 4.6rem 0 rgb(0 0 0 / 14%);
+        padding: 35px;
+        border-radius: 5px;
+        margin: 20px;
+        min-width: calc(50% - 40px);
+        flex-basis: calc(50% - 40px);
+
+        &.--full{
+            min-width: calc(100% - 40px);
+            max-width: calc(100% - 40px);
+            flex-basis: calc(100% - 40px);
+
+            @include media(light){
+                min-width: 100%;
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+        }
+
+        @include media(semiBold){
+            min-width: calc(100% - 40px);
+            max-width: calc(100% - 40px);
+            flex-basis: calc(100% - 40px);
+        }
+        @include media(extraLight){
+            padding: 20px;
+        }
+        @include media(light){
+            margin-left: 0;
+            margin-right: 0;
+            min-width: 100%;
+            max-width: 100%;
+            flex-basis: 100%;
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 500px;
+        max-width: 100%;
+        object-fit: cover;
+
+        @include media(extraLight){
+            height: 400px;
+        }
+        @include media(light){
+            height: 300px;
+        }
+        @include media(middleLight){
+            height: 250px;
+        }
+        @include media(small){
+            height: 200px;
+        }
+    }
+    &__flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+
+        @include media(bold){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include media(semiBold){
+            flex-direction: row;
+            align-items: center;
+        }
+        @include media(regular){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include media(light){
+            padding: 15px;
+        }
+    }
+    &__column.--full &__flex{
+        @include media(bold){
+            flex-direction: row;
+            align-items: center;
+        }
+        @include media(regular){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__header{
+        @include media(bold){
+            margin-bottom: 20px;
+        }
+        @include media(light){
+            margin-bottom: 15px;
+        }
+    }
+    &__title{
+        color: var(--darky-clr);
+        font-size: 30px;
+
+        @include getFontWeight(bold);
+
+        @include media(light){
+            font-size: 24px;
+        }
+    }
+    &__btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 18px;
+        padding: 15px 30px;
+        border-radius: 5px;
+        border: 1px solid #b6b7b9;
+        color: var(--sub-clr);
+
+        @include easyTransition;
+
+
+        &:hover,
+        &:focus{
+            color: var(--main-clr);
+            background: var(--primary-gradient);
+        }
+
+        @include media(light){
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+        @include media(small){
+            width: 100%;
+        }
+    }
+
+
+    &__image{
+        width: 100%;
+    }
+}

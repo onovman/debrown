@@ -1,0 +1,218 @@
+@use '../abstractions' as *; 
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+}
+.column{
+    display: flex;
+}
+
+.col{
+    padding: 0 1rem;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.col-sm{
+    @include media(light, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-sd{
+    @include media(regular, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.col-md{
+    @include media(light, false){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+.col-ml{
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    @include media(light, false){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    @include media(medium, false){
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+.col-sr{
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+
+    @include media(middleBold){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @include media(regular){
+        flex: 0 0 100%;  
+        max-width: 100%;
+    }
+}
+
+.col-bd{
+    @include media(light, false){
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+    @include media(medium, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+}
+.col-bdl{
+    @include media(light, false){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    @include media(medium, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-xl-2{
+    @include media(light, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @include media(medium, false){
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+    @include media(extraMedium, false){
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+    
+}
+.col-xl-4{
+    @include media(light, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @include media(medium, false){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    
+}
+.col-xl-3{
+    flex: 0 0 100%;
+    max-width: 100%;
+    
+    @include media(light, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @include media(medium, false){
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    @include media(extraMedium, false){
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+}
+
+.col-sl{
+    width: 100%;
+    min-height: 1px;
+    padding: 0 1rem;
+
+    @include media(medium, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-sml{
+    padding: 0 1rem;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include media(light, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @include media(extraMedium, false){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+.col-s{
+    padding: 0 1rem;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include media(small, false){
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    @include media(regular, false){
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+        margin: 0 auto;
+    }
+    @include media(extraMedium, false){
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+        margin: 0 auto;
+    }
+}
+
+.col-gm{
+    padding: 0 1rem;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include media(medium, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-sl-4{
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include media(regular, false){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @include media(medium, false){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+.col-ml-3{
+    padding: 0 1rem;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    @include media(light, false){
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    @include media(medium, false){
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}

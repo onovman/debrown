@@ -1,0 +1,144 @@
+@use '../abstractions' as *;
+
+.description{
+    padding-top: 9.8rem;
+    padding-bottom: 10rem;
+    position: relative;
+
+    @include media(regular){
+        padding-top: 3.5rem;
+        padding-bottom: 2rem;
+    }
+
+    &__container{
+        position: relative;
+    }
+
+    &__arrow{
+        z-index: -1;
+        &-img{
+            left: 0;
+            top: 15.9rem;
+
+            @include media(extraBold){
+                top: 25.9rem;
+            }
+        }
+    }
+    &__side{
+        padding: 0 1rem;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        @include media(light, false){
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+        @include media(medium, false){
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+        }
+    }
+    &__des{
+        @include media(regular){
+            font-size: 1rem;
+        }
+        @include media(light){
+            margin-left: 5rem;
+        }
+    }
+    &__about{
+        font-size: 1.125rem;
+        line-height: 1.4;
+        max-width: 100%;
+    }
+
+    &__img{
+        z-index: -1;
+    }
+    .dog-img{
+        right: 10.5rem;
+        top: -5.7rem;
+
+        @include media(extraMedium){
+            right: 5.5rem;
+            top: -3.7rem;
+        }
+        @include media(medium){
+            right: initial;
+            top: initial;
+            width: 300px;
+            bottom: -2rem;
+            left: 58%;
+            z-index: 1;
+        }
+        @include media(regular){
+            width: 260px;
+            left: calc(75% - 8rem);
+        }
+        @include media(light){
+            right: initial;
+            top: initial;
+            width: 260px;
+            bottom: -2rem;
+            left: -12rem;
+        }
+    }
+    .dog{
+        position: absolute;
+        background: #fdfdfd;
+        width: 33rem;
+        height: 36rem;
+        right: 5rem;
+        top: -6rem;
+        overflow: hidden;
+        z-index: -1;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            background-color: #f5f5f5;
+            z-index: 1;
+        }
+        &::before {
+            width: 6rem;
+            height: 21rem;
+            -webkit-transform: rotate(46deg);
+            -ms-transform: rotate(46deg);
+            transform: rotate(46deg);
+            left: 2.4rem;
+            top: -5.5rem;
+        }
+        &::after{
+            bottom: 0;
+            right: 0;
+            width: 3rem;
+            height: 3rem;
+            border-top: 1.5rem solid #f5f5f5;
+            border-left: 1.5rem solid #f5f5f5;
+            border-right: 1.5rem solid #fdfdfd;
+            border-bottom: 1.5rem solid #fdfdfd;
+        }
+    }
+    .dots2{
+        right: 2.8rem;
+        top: -8.1rem;
+    }
+
+    &__btn{
+        @include media(light){
+            margin-left: 5rem;
+        }
+    }
+    .title h3{
+        font-size: 1.9rem;
+
+        @include media(regular){
+            font-size: var(--semiMedium-fz) !important;
+            line-height: 1.2;
+            display: block;
+            margin-bottom: 1.5rem !important;
+        }
+    }
+}

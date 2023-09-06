@@ -1,0 +1,121 @@
+@use '../abstractions' as *;
+
+.main-slider{
+    position: relative;
+    z-index: 1;
+
+    &__real{
+        position: relative;
+    }
+
+    &__bg{
+        bottom: -3rem;
+        right: 1rem;
+        z-index: -1;
+    }
+    &__column{
+        @include media(regular){
+            display: block;
+        }
+    }
+    &__first-side{
+        @include media(regular, false){
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+            line-height: 1.2;
+        }
+        @include media(medium){
+            align-self: center;
+        }
+        @include media(regular){
+            align-self: initial;
+            max-width: 350px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        @include media(light){
+            width: 250px;
+        }
+    }
+    &__second-side{
+        @include media(regular, false){
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+        }
+    }
+    &__section{
+        padding-left: 3.5rem;
+
+        @include media(bold){
+            padding-left: 1.4rem;
+        }
+        @include media(regular){
+            padding-left: 3rem;
+        }
+    }
+    em{
+        @include media(light){
+            background: transparent;
+            color: var(--primary-accent-clr);
+            margin: 0;
+            padding: 0;
+        }
+    }
+    &__btn{
+        margin: 1rem 0 0 1.5rem;
+
+        @include media(bold){
+            margin-left: 1.3rem !important;
+        }
+    }
+    &__top-title{
+        margin: 0;
+        font-size: 1.25rem;
+
+        @include media(regular){
+            font-size: 1rem;
+        }
+    }
+    &__control{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: calc(10% - 1rem);
+        bottom: 2rem;
+        z-index: 2;
+
+        @include media(regular){
+            left: 5rem;
+            bottom: 4rem;
+        }
+
+        @include getFontWeight(bold);
+    }
+    &__range{
+        width: 72px;
+        height: 10px;
+        position: relative;
+        background-color: var(--main-clr);
+        margin: -2px 8px 0;
+
+        &-fill{
+            display: block;
+            position: absolute;
+            background: var(--primary-gradient);
+            height: 100%;
+        }
+    }
+
+    &__next{
+        background: url(../../img/elements/arrow-scroll.webp);
+        transform: rotate(180deg);
+        border: 0;
+        width: 30px;
+        background-size: cover;
+        height: 15px;
+        position: absolute;
+        top: 3px;
+        right: -2.5rem;
+        cursor: pointer;
+    }
+}

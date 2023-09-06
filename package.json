@@ -1,0 +1,15 @@
+{
+  "name": "ozseo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sasswatch": "sass --watch src/scss:dist/assets/css/unmin & sass --watch src/scss:dist/assets/css/min --style=compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.51.0"
+  }
+}

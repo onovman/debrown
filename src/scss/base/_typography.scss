@@ -1,0 +1,350 @@
+@use '../abstractions' as *;
+
+:root{
+    font-family: var(--primary-font-family), var(--secondary-font-family);
+
+    --semiLight-fz: .7rem;
+    --light-fz: .8rem;
+    --extraLight-fz: .9rem;
+    --regular-fz: 1rem;
+    --extraRegular-fz: 1.125rem;
+    --semiMedium-fz: 1.25rem;
+    --medium-fz: 1.5rem;
+    --middleMedium-fz: 1.8rem;
+    --extraMedium-fz: 1.9rem;
+    --bold-fz: 2rem;
+    --extraBold-fz: 2.5rem;
+    --mega-fz: 3rem;
+    --num-fz: 8rem;
+    --bc-fz: 9rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+h1{
+    font-size: var(--mega-fz);
+    margin: 0 0 2.5rem;
+    line-height: 1.2;
+}
+h2{
+    font-size: var(--extraBold-fz);
+    margin: 0 0 2rem;
+    line-height: 1.2;
+
+    @include media(light){
+        font-size: var(--medium-fz);
+    }
+}
+h3{
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    line-height: 1.3;
+}
+
+b, strong{
+    @include getFontWeight(bold);
+}
+
+p{
+    margin: 1rem 0;
+
+    &:first-child{
+        margin: 0;
+    }
+}
+
+.list{
+    h2, h3{
+        color: var(--primary-clr);
+
+        @include getFontWeight(regular);
+    }
+    ul{
+        li{
+            position: relative;
+            margin: 0.7rem 0;
+            list-style: none;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0.4rem;
+                border: 2px solid var(--primary-accent-clr);
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.off-head{
+    h1, h2{
+        margin-top: 3rem;
+        font-size: 3rem;
+        line-height: 1.2;
+
+        @include getFontWeight(bold);
+
+        @include media(extraMedium){
+            margin-top: 2rem;
+            font-size: var(--extraBold-fz);
+        }
+        @include media(medium){
+            font-size: var(--bold-fz);
+        }
+    }
+    h2{
+        @include media(bold){
+            font-size: var(--bold-fz);
+        }
+    }
+    del{
+        font-size: 1.5rem;
+
+        @include getFontWeight(bold);
+    }
+}
+
+del{
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1em;
+}
+del.default{
+    background: transparent;
+    color: var(--primary-clr);
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+}
+
+
+em{
+    display: inline-block;
+    font-size: 1em;
+    color: var(--main-clr);
+    padding: 0 1rem;
+    background: var(--primary-gradient);
+}
+
+.italic{
+    font-style: italic;
+}
+
+
+.secondary-title{
+    font-size: var(--extraMedium-fz);
+    line-height: 1.3;
+    margin-bottom: 2.8rem !important;
+    display: block;
+
+    @include getFontWeight(bold);
+
+    @include media(regular){
+        font-size: var(--semiMedium-fz);
+        line-height: 1.2;
+        display: block;
+        margin-bottom: 1.5rem !important;
+    }
+}
+.tetriary-title{
+    font-size: var(--semiMedium-fz);
+    white-space: nowrap;
+    color: var(--sable-clr);
+
+    @include getFontWeight(bold);
+}
+
+.thin-title{
+    font-size: var(--bold-fz);
+    letter-spacing: 2px;
+    margin-bottom: 1.4rem;
+
+    @include getFontWeight(medium);
+
+    @include media(extraMedium){
+        letter-spacing: 2px;
+        font-size: var(--bold-fz);
+        letter-spacing: initial;
+        line-height: 1.2;
+
+        @include getFontWeight(medium);
+    }
+    @include media(regular){
+        font-size: var(--medium-fz);
+    }
+}
+
+.light-title{
+    font-size: var(--extraLight-fz);
+    max-width: 240px;
+    line-height: 1.2;
+    color: var(--dull-clr);
+
+    @include media(extraBold){
+        max-width: 160px;
+    }
+}
+.extra-light-title{
+    font-size: var(--regular-fz);
+    color: var(--dull-accent-clr);
+
+    @include media(bold){
+        font-size: var(--light-fz);
+    }
+}
+.heading-title{
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+
+    @include media(medium){
+        font-size: 1.25rem;
+    }
+    @include media(regular){
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    @include media(light){
+        font-size: 1.125rem;
+    }
+
+    @include getFontWeight(bold);
+}
+.offer-link-title{
+    font-size: var(--extraRegular-fz);
+    color: var(--primary-accent-clr);
+}
+
+.num-title{
+    font-size: var(--bold-fz);
+
+    @include getFontWeight(bold);
+
+    @include media(regular){
+        font-size: var(--semiMedium-fz);
+    }
+}
+
+
+.linked-title{
+    color: var(--primary-accent-clr);
+}
+
+.phone-title{
+    color: var(--primary-accent-clr);
+    font-size: var(--semiMedium-fz);
+
+    @include getFontWeight(bold);
+}
+
+.menu-title{
+    font-size: var(--medium-fz);
+
+    @include getFontWeight(light);
+}
+
+.form-title{
+    line-height: 1.2;
+    margin: 0px;
+    font-size: var(--middleMedium-fz);
+}
+
+.des-title{
+    @include getFontWeight(light);
+}
+
+
+.off-heading-title{
+    padding-left: 3rem;
+    margin-top: 4rem;
+    max-width: 400px;
+    line-height: 1.3;
+    background-image: url(../../img/elements/arrow.png);
+    background-repeat: no-repeat;
+    background-position: 1rem 0.4rem;
+    background-size: 17px 17px;
+    color: var(--sable-clr);
+    position: relative;
+    display: block;
+    font-size: var(--medium-fz);
+    margin-left: -3rem;
+
+    @include getFontWeight(bold);
+
+    @include media(regular){
+        margin-top: 3rem;
+    }
+    @include media(light){
+        margin-top: 2rem;
+        font-size: var(--semiMedium-fz);
+    }
+}
+
+.modal__agreement a{
+    color: var(--primary-accent-clr) !important;
+}
+
+.btn-wrapper{
+    &.tal{
+        text-align: left;
+    }
+    &.tac{
+        text-align: center;
+    }
+    &.tar{
+        text-align: right;
+    }
+}
+
+.title{
+    &.tac{
+        text-align: center;
+    }
+    &.tal{
+        text-align: left;
+    }
+    &.tar{
+        text-align: right;
+    }
+
+    h1, h2, h3{
+        font-weight: 400;
+    }
+    h1{
+        @include media(medium){
+            font-size: 2.5rem;
+        }
+    }
+    h2{
+        @include media(regular){
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+    h3{
+        font-size: 2rem;
+
+        @include media(regular){
+            font-size: 1.8rem;
+            margin: 0 0 2rem;
+        }
+    }
+}
+
+.list{
+    &.tac{
+        text-align: center !important;
+    }
+    &.tal{
+        text-align: left !important;
+    }
+    &.tar{
+        text-align: right !important;
+    }
+}

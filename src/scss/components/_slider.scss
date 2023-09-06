@@ -1,0 +1,17 @@
+@use '../abstractions' as *;
+
+.slider{
+    overflow: hidden;
+
+    &-track{
+        display: flex;
+
+        @include easyTransition(1s);
+
+        z-index: 1;
+    }
+}
+.slide{
+    flex-shrink: 0;
+    width: 100%;
+}

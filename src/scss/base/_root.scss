@@ -1,0 +1,25 @@
+@use '../abstractions' as *;
+
+:root{
+    scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: var(--sub-clr);
+    text-align: left;
+    overflow-x: hidden;
+
+    @include media(semiLight){
+        font-size: 15px;
+    }
+}
+body{
+    font-size: 1rem;
+    
+    @include getFontWeight(regular);
+}
+
+
+

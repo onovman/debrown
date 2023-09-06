@@ -1,0 +1,31 @@
+@use '../abstractions' as *;
+
+.e404{
+    min-height: 100vh;
+    margin-top: 7rem 0;
+
+    background-image: url(../../img/e404.webp);
+    background-position: 51% 5%;
+    background-repeat: no-repeat;
+    background-size: auto 30%;
+
+    &__head{
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        margin-top: 22rem;
+
+        @include getFontWeight(bold);
+    }
+    &__btn{
+        width: 100%;
+        max-width: 250px;
+
+        &-wrap{
+            text-align: center;
+        }
+    }
+    em{
+        @include getFontWeight(regular);
+    }
+}

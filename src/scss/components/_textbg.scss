@@ -1,0 +1,15 @@
+@use '../abstractions' as *;
+
+.textbg{
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 9rem;
+    color: #ebebeb;
+    pointer-events: none;
+
+    @include getFontWeight(bold);
+
+    @include media(regular){
+        display: none;
+    }
+}

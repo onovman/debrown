@@ -1,0 +1,233 @@
+@use '../abstractions' as *;
+
+.btn{
+    display: inline-block;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.125rem;
+
+    @include media(light){
+        font-size: 1rem;
+    }
+
+    &.pm, &.pmx, &.pmbg, &.pmd, &.pms{
+        padding: 0;
+        span{
+            display: inline-flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &.pm, &.pmbg{
+        span{
+            padding: 1.25rem 2rem;
+
+            @include media(regular){
+                padding: 0.75rem 2rem;
+            }
+            @include media(light){
+                padding: 0.75rem 1rem;
+            }
+        }
+    }
+    &.pmd{
+        width: 100%;
+        max-width: 230px;
+
+        span{
+            padding: 0.9rem 1rem;
+        }
+    }
+    &.pms{
+        span{
+            padding: 0.9rem 2rem;
+
+            @include media(light){
+                padding: 0.6rem 1rem;
+            }
+        }
+    }
+    &.pmx{
+        color: var(--primary-accent-clr);
+        width: 232px;
+        height: 3.5rem;
+        font-size: 1.125rem;
+        padding: 0.5rem 0;
+    }
+    &.pmbg{
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        max-width: 260px;
+
+        span{
+            @include media(regular){
+                padding: 0.75rem 2rem;
+            }
+            @include media(light){
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        @include media(light){
+            max-width: 150px;
+        }
+    }
+    &.secondared{
+        --primary-gradient: var(--secondary-gradient);
+    }
+}
+.btn-gradient{
+    position: relative;
+
+    & > *{
+        position: relative;
+        z-index: 1;
+        color: var(--btn-gradient-content-clr, unset);
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    &::before{
+        left: 0;
+        top: 0;
+        background: var(--btn-gradient-brdr-clr, var(--primary-gradient));
+        z-index: 0;
+        border-radius: 7px !important;
+    }
+    &::after{
+        --btn-border-width: 10px;
+        --btn-border-height: 10px;
+        left: 5px;
+        top: 5px;
+        width: calc(100% - var(--btn-border-width));
+        height: calc(100% - var(--btn-border-height));
+        background-color: var(--btn-gradient-bc, var(--main-clr));
+        z-index: 0;
+        border-radius: var(--btn-gradient-radius, 0);
+        border-radius: 3px !important;
+
+        @include easyTransition;
+    }
+
+    @include easyTransition;
+}
+.blind-btn{
+    overflow: hidden;
+
+    .blind__element{
+        display: inline-block !important;
+        background-color: var(--main-clr);
+        padding: 0 !important;
+        width: 1rem !important;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        transform: skew(-45deg);
+        animation: 2s blindme infinite;
+
+        @keyframes blindme {
+            0%{
+                left: calc(0% - 3rem);
+            }
+            50%{
+                left: calc(0% - 3rem);
+            }
+            100%{
+                left: calc(100% + 2rem);
+            }
+        }
+    }
+}
+
+
+.call-btn{
+    @extend .btn;
+
+    background-color: var(--accent-clr);
+    color: var(--sable-clr);
+    width: 11rem;
+    font-size: 1em !important;
+    border-radius: 5px !important;
+
+    &:hover,
+    &:focus{
+        --accent-clr: var(--primary-clr);
+        --sable-clr: var(--main-clr);
+    }
+    @include easyTransition;
+    @include getFontWeight(bold);
+    
+}
+.primary-btn{
+    @extend .btn;
+    @extend .btn-gradient;
+
+    &:hover,
+    &:focus,
+    &.active{
+        --btn-gradient-bc: var(--primary-gradient);
+        --btn-gradient-content-clr: var(--main-clr);
+    }
+
+    &.filled{
+        --btn-gradient-bc: var(--primary-gradient);
+        --btn-gradient-content-clr: var(--main-clr);
+
+        &:hover,
+        &:focus{
+            --btn-gradient-bc: var(--main-gradient);
+            --btn-gradient-content-clr: unset;
+        }
+    }
+
+}
+
+.left-btn{
+    @extend .btn;
+    @extend .btn-gradient;
+
+    --btn-gradient-bc: var(--primary-gradient);
+    --btn-gradient-content-clr: var(--main-clr);
+    --btn-gradient-radius: 3rem 3rem 2rem 2rem;
+    position: fixed;
+    transform: rotate(90deg);
+    left: -1.5rem;
+    top: 50%;
+    margin-top: -137px;
+    transform-origin: left bottom;
+    border-radius: 3rem 3rem 2rem 2rem;
+    padding: 0;
+    overflow: hidden;
+    z-index: 100;
+
+    span{
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0.7rem 4rem 1.8rem;
+    }
+
+    &:hover,
+    &:focus{
+        --btn-gradient-bc: var(--main-clr);
+        --btn-gradient-content-clr: currentColor;
+    }
+    &::after{
+        border-radius: var(--btn-gradient-radius) !important;
+    }
+}
+

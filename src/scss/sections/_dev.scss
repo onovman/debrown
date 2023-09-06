@@ -1,0 +1,64 @@
+@use '../abstractions' as *;
+
+.dev{
+    &__header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        @include media(medium){
+            margin-bottom: 20px;
+        }
+        @include media(light){
+            margin-bottom: 15px;
+        }
+        @include media(small){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__col{
+        padding: 0 15px;
+        padding-bottom: 20px;
+    }
+    &__container{
+        padding: 35px 25px;
+        border-radius: 15px;
+        background: var(--lightgray-clr) url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTM0IiBoZWlnaHQ9IjUzNCIgdmlld0JveD0iMCAwIDUzNCA1MzQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTM0IDI5OC44NDRDNDg4LjE2MSAyOTguODQ0IDQ0Mi45MzcgMjg4LjI5OSA0MDEuODI1IDI2OC4wMjVDMzYwLjcxMyAyNDcuNzUxIDMyNC44MTYgMjE4LjI5MSAyOTYuOTExIDE4MS45MjVDMjY5LjAwNiAxNDUuNTU4IDI0OS44NDEgMTAzLjI2IDI0MC44OTkgNTguMzAxNkMyMzcuMDY3IDM5LjA0MDYgMjM1LjE1NiAxOS41MTI3IDIzNS4xNTYgNi43MTUzNGUtMDZMMCAtNi4zNjc4OWUtMDZDLTguMzYyNDNlLTA3IDcwLjEyNTkgMTMuODEyMyAxMzkuNTY1IDQwLjY0ODMgMjA0LjM1M0M2Ny40ODQzIDI2OS4xNDEgMTA2LjgxOCAzMjguMDA5IDE1Ni40MDUgMzc3LjU5NUMyMDUuOTkxIDQyNy4xODIgMjY0Ljg1OSA0NjYuNTE2IDMyOS42NDcgNDkzLjM1MkMzOTQuNDM1IDUyMC4xODggNDYzLjg3NCA1MzQgNTM0IDUzNEw1MzQgMjk4Ljg0NFoiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xM181OCkiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xM181OCIgeDE9IjUzNC41NDQiIHkxPSI0NDEuODk0IiB4Mj0iMTI1LjE5NSIgeTI9Ii05NS4wMzI5IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IndoaXRlIi8+CjxzdG9wIG9mZnNldD0iMC40MTE0NTgiIHN0b3AtY29sb3I9IndoaXRlIi8+CjxzdG9wIG9mZnNldD0iMC44MjI5MTciIHN0b3AtY29sb3I9IndoaXRlIiBzdG9wLW9wYWNpdHk9IjAiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K) no-repeat;
+        
+        &:hover{
+            box-shadow: 0 15px 15px rgba(14, 16, 20, .15);
+        }
+
+        @include easyTransition;
+    }
+    &__icon{
+        width: 40px;
+        height: 40px;
+        margin-right: 25px;
+
+        @include media(small){
+            width: 30px;
+            height: 30px;
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+    &__title{
+        font-size: 24px;
+
+        @include getFontWeight(bold);
+
+        @include media(medium){
+            font-size: 18px;
+        }
+    }
+    &__des{
+        margin-bottom: 10px;
+        font-size: 18px;
+
+        @include media(light){
+            font-size: 16px;
+        }
+    }
+}

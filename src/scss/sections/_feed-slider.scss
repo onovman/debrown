@@ -1,0 +1,206 @@
+@use '../abstractions' as *;
+
+.feed-slider{
+    padding-top: 7.1rem;
+    padding-bottom: 12rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+
+    .feed-wrap{
+        position: relative;
+    }
+
+    &__title{
+        text-align: center;
+
+        @include media(regular){
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+    }
+    &__slide{
+        &-content{
+            width: 100%;
+            display: flex;
+        }
+    }
+    &__text-side{
+        width: calc(100% - 350px);
+        padding: 5.3rem 12% 0 6rem;
+        position: relative;
+        margin-top: 2.6rem;
+        font-size: 1.125rem;
+        line-height: 1.35;
+
+        @include media(medium){
+            padding: 2.3rem 2% 5rem 3rem;
+            min-height: unset;
+        }
+        @include media(regular){
+            width: 100%;
+        }
+
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            display: block;
+        }
+        &::before{
+            left: 0;
+            top: 0;
+            border-top: 0.5rem solid var(--primary-clr);
+            width: calc(100% - 8.7rem);
+            border-left: 0.5rem solid var(--primary-clr);
+            height: calc(100% - 7.7rem);
+        }
+        &::after{
+            background-image: url(../../img/elements/quot.webp);
+            width: 110px;
+            height: 87px;
+            left: 4rem;
+            top: 3rem;
+            background-repeat: no-repeat;
+        }
+    }
+    &__img-side{
+        min-width: 350px;
+        max-width: 350px;
+        position: relative;
+
+        @include media(regular){
+            display: none;
+        }
+    }
+    &__img{
+        max-width: calc(100% - 4rem);
+        max-height: calc(100% - 4rem);
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 2rem;
+        box-shadow: 0 0 2px rgb(0 0 0 / 20%);
+        border-radius: 0.2rem;
+    }
+    &__arrow{
+        left: 0;
+        top: 9rem;
+    }
+    &__btn{
+        position: absolute;
+        bottom: -3rem;
+        left: 5.8rem;
+        width: 180px;
+        padding: 0.7rem 0;
+        margin-top: 5rem;
+        border: 2px solid #c5c5c5;
+        color: var(--sable-clr);
+        font-size: 0.8rem;
+        line-height: 1.3;
+        cursor: pointer;
+        text-align: center;
+
+        @include media(regular){
+            width: 120px;
+            left: 0;
+            margin-top: 0;
+            bottom: -1rem;
+        }
+
+        @include easyTransition(.5s);
+
+        span{
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            width: 3.3rem;
+            position: relative;
+
+            @include media(regular){
+                display: none;
+            }
+
+            @include easyTransition(.5s);
+        
+            &::before, &::after{
+                content: '';
+                position: absolute;
+                display: block;
+                background-image: url(../../img/elements/arrow-scroll.webp);
+                width: 47px;
+                height: 21px;
+                opacity: 0.6;
+                top: -0.8rem;
+                left: -0.4rem;
+            }
+            &::after{
+                background-image: url(../../img/elements/arrow-scroll.webp);
+                opacity: 0;
+
+                @include easyTransition(.5s);
+            }
+        }
+
+        &:hover{
+            color: var(--primary-clr);
+            border: 2px solid var(--primary-clr);
+            text-indent: -3rem;
+
+            span{
+                left: -1.1rem;
+
+                &::after{
+                    opacity: 1;
+                }
+                &::before{
+                    opacity: 0;
+                }
+            }
+
+            @include media(regular){
+                text-indent: initial !important;
+            }
+            
+        }
+    }
+    .feed-prev{
+        z-index: 2;
+    }
+    .feed-next{
+        z-index: 1;
+        margin-left: 12.5rem;
+
+        @include media(regular){
+            margin-left: 8.5rem;
+            
+        }
+
+        &:hover{
+            text-indent: 3rem;
+
+            span{
+                left: 1.1rem;
+            }
+        }
+        span{
+            transform: rotate(180deg);
+            top: -0.4rem;
+        }
+    }
+    .feed-real-slider{
+        margin: 0 auto 0;
+        max-width: 1130px;
+    }
+    .feed__sider{
+        bottom: -3rem;
+        margin: 0 auto 0;
+        max-width: 1130px;
+        position: relative;
+
+        @include media(extraMedium){
+            bottom: 0;
+        }
+    }
+
+}
